@@ -45,3 +45,7 @@ Result:
 10.00000
 
 3.00000
+
+# to run use command
+
+cat inputTestSheet.txt | java -classpath src/ main.Spreadsheet

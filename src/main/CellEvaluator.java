@@ -1,4 +1,4 @@
-package main.evaluator;
+package main;
 
 import main.Cell;
 

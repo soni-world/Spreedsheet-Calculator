@@ -1,7 +1,5 @@
 package main;
 
-import main.evaluator.*;
-
 import java.util.Scanner;
 
 /**
@@ -11,7 +9,6 @@ public class Spreadsheet {
    public static Cell[][] sheetCells;
    public static int sizeX;
    public static int sizeY;
-   public static CellEvaluator cellEvaluator = new CellEvaluator();
 
    public static void main(String[] args) {
 
@@ -20,7 +17,9 @@ public class Spreadsheet {
          populateCellValues(spreadSheetCell);
          for (int i = 0; i < sizeX; i++) {
             for (int j = 0; j < sizeY; j++) {
-               Cell toEvaluateCell = sheetCells[i][j];
+               Cell toEvaluateCell = new Cell();
+               toEvaluateCell = sheetCells[i][j];
+               CellEvaluator cellEvaluator = new CellEvaluator();
                cellEvaluator.evaluateCell(toEvaluateCell, null, sheetCells);
             }
          }
