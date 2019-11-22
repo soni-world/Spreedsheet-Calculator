@@ -10,6 +10,8 @@ public class Spreadsheet {
    public static int sizeX;
    public static int sizeY;
 
+   private static CellEvaluator cellEvaluator = new CellEvaluator();
+
    public static void main(String[] args) {
 
       Spreadsheet spreadSheetCell = new Spreadsheet();
@@ -17,9 +19,7 @@ public class Spreadsheet {
          populateCellValues(spreadSheetCell);
          for (int i = 0; i < sizeX; i++) {
             for (int j = 0; j < sizeY; j++) {
-               Cell toEvaluateCell = new Cell();
-               toEvaluateCell = sheetCells[i][j];
-               CellEvaluator cellEvaluator = new CellEvaluator();
+               Cell toEvaluateCell = sheetCells[i][j];
                cellEvaluator.evaluateCell(toEvaluateCell, null, sheetCells);
             }
          }
@@ -34,12 +34,12 @@ public class Spreadsheet {
          }
 
       } catch (Exception e) {
-         System.out.println("Error occurrend in main:" + e.getMessage());
+         System.out.println("Error in main:" + e.getMessage());
       }
    }
 
    private static void populateCellValues(Spreadsheet spreadSheet) {
-      // TODO Auto-generated method stub
+
       try
       {
          Scanner sc = new Scanner(System.in);
@@ -52,7 +52,7 @@ public class Spreadsheet {
             fields = sc.nextLine().split(" ");
 
             if (fields.length != 2) {
-               throw new IllegalArgumentException("Invalid Size");
+               throw new IllegalArgumentException("Invalid Size as required input size should be 2");
             } else {
                for (int i = 0; i < fields.length; i++)
                   size[i] = Integer.parseInt(fields[i]);
@@ -78,10 +78,10 @@ public class Spreadsheet {
          }
 
          if (cellCount != size[0]*size[1])
-            throw new IllegalArgumentException("No of cells doesn't match the given size");
+            throw new IllegalArgumentException("No of cells doesn't match the given size, please check");
       }
       catch(Exception e){
-         System.out.println("Error occurred in while reading values");
+         System.out.println("Error occurred in while reading values for cells");
          System.exit(1);
       }
    }
