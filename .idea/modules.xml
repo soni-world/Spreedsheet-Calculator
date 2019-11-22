@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Spreedsheet-Calculator.iml" filepath="$PROJECT_DIR$/Spreedsheet-Calculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spreadsheet-Calculator.iml" filepath="$PROJECT_DIR$/Spreadsheet-Calculator.iml" />
     </modules>
   </component>
 </project>
